@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <link rel='stylesheet' href = '/vendor/bootstrap/dist/css/bootstrap.css'>
+    <link rel='stylesheet' href = '/css/mystyle.css'>
+  </head>
+
+
+  <div class = 'page-header'>Acme Product Users and Managers</div>
+
+
+
+  <body class = 'well'>
+    <nav class="navbar navbar-default">
+
+
+      <ul class="nav navbar-nav">
+        <li class ="active"><a href="/">Home</a></li>
+        <li><a href="/users"> Users </a></li>
+        <li><a href="/users/managers"> Managers </a></li>
+      </ul>
+    </nav>
+
+    <form action="/users" method="POST">
+      <div class="form-group">
+        <input class="form-control" name= "user" placeholder = "name">
+        <input type="checkbox" name= "manager"> Is Manager?
+        <br>
+
+        <button class = "btn btn-primary"> Add </button>
+
+
+      </div>
+    </form>
+
+  </body>
+
+</html>

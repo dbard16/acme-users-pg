@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <link rel='stylesheet' href = '/vendor/bootstrap/dist/css/bootstrap.css'>
+    <link rel='stylesheet' href = '/css/mystyle.css'>
+  </head>
+
+
+  <div class = 'page-header'>Acme Product Users and Managers</div>
+
+
+
+  <body class = 'well'>
+    <nav class="navbar navbar-default">
+
+
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li class ="active"><a href="/users"> Users </a></li>
+        <li><a href="/users/managers"> Managers </a></li>
+      </ul>
+    </nav>
+
+
+    <table class = "table table-striped">
+    {% for user in users%}
+
+      <tr>
+        <td> {{user.name}}
+          {% if user.manager === true %}
+            <div  class="label label-success" > Manager </div>
+          {% else %}
+            <form action="/users/{{user.id}}?_method=PUT" method="POST">
+              <button class = "btn btn-info"> Promote </button>
+            </form>
+            <form action="/users/{{user.id}}?_method=DELETE" method="POST">
+              <button class = "btn btn-danger"> Delete User! </button>
+            </form>
+          {% endif %}
+        </td>
+
+      </tr>
+    {% endfor %}
+    </table>
+
+
+
+
+  </body>
+
+</html>
