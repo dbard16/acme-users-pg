@@ -25,10 +25,7 @@ app.use(require('method-override')('_method'));
 app.use('/', routes);
 
 
-//error handling
-app.use('error', function(req, res, next, err){
-  res.render('error', {error:err});
-})
+
 
 
 //listening to port

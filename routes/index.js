@@ -25,12 +25,16 @@ router.post('/users', function(req, res, next){
     man = false;
   }
   db.createUser(req.body.user, man)
+  .then(function(){
   if (!man){
     res.redirect('/users');
   }
   else{
     res.redirect('/users/managers');
   }
+  })
+  .catch(next);
+
 
 });
 

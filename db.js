@@ -25,7 +25,7 @@ const sql = `
 
   CREATE TABLE users(
     id SERIAL PRIMARY KEY,
-    name CHARACTER VARYING(255),
+    name CHARACTER VARYING(255) UNIQUE,
     manager BOOLEAN
   );`
   return query(sql, null);
